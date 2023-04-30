@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Open+Sans:wght@300&display=swap');
+
+$fontAssistant: 'Assistant', sans-serif;
+$fontSecularOne: 'Assistant', sans-serif;
+
+div {
+    font-family: $fontAssistant;
+}
+
+$lightYellow: #fee661;
+$lightYellow2: #ecc855;
+$darkYellow: #f6ca35;
+$blue: #39597b;
+$darkBlue: #3b5477;
+$gray: #a5a5a5;
+$white: #f7f7f7;
+
+@import "~bootstrap/scss/bootstrap.scss";
