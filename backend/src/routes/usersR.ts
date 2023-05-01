@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 import { User } from "../db/models/userM.js";
 import { signUpValidate } from "../middlewares/signUpValidate.js";
 import { userExists } from "../middlewares/userExists.js";
+import { signInValidate } from "../middlewares/signInValidate.js";
 
 const router = Router();
 
@@ -19,7 +20,7 @@ router.post("/signup", signUpValidate, userExists, async (req, res) => {
   }
 });
 
-router.post("/signin", signUpValidate, async (req, res) => {
+router.post("/signin", signInValidate, async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
   const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
 
