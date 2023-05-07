@@ -13,6 +13,7 @@ import bcrypt from "bcryptjs";
 import { User } from "../db/models/userM.js";
 import { signUpValidate } from "../middlewares/signUpValidate.js";
 import { userExists } from "../middlewares/userExists.js";
+import { signInValidate } from "../middlewares/signInValidate.js";
 const router = Router();
 router.post("/signup", signUpValidate, userExists, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const body = _.pick(req.body, "userName", "email", "password");
@@ -25,7 +26,7 @@ router.post("/signup", signUpValidate, userExists, (req, res) => __awaiter(void 
         return res.status(500).json({ message: "Server DB Error", error: e });
     }
 }));
-router.post("/signin", signUpValidate, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post("/signin", signInValidate, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const user = yield User.findOne({ email: req.body.email });
     const isPasswordValid = yield bcrypt.compare(req.body.password, user.password);
     try {

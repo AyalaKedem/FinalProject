@@ -5,9 +5,10 @@ const productSchema = new Schema({
     category: String,
     status: String,
     price: Number,
-    img: String,
+    // img: String,
     name: String,
     city: String,
-    munber: String,
+    number: String,
+    isFave: Boolean
 });
 export { productSchema };

@@ -1,4 +1,4 @@
-type Category = "רכב" | 'נדל"ן' | "מטבח" | "רהיטים" | "ביגוד והנעלה" | "אוספים" | "חיות מחמד" | "ספרים" | "מוצרי חשמל" | "ספורט" | "סלולר" | "מחשבים" | "לתינוק ולילד" | "שונות";
+// type Category = "רכב" | 'נדל"ן' | "מטבח" | "רהיטים" | "ביגוד והנעלה" | "אוספים" | "חיות מחמד" | "ספרים" | "מוצרי חשמל" | "ספורט" | "סלולר" | "מחשבים" | "לתינוק ולילד" | "שונות";
 
 export type StatusType = "חדש" | "כמו חדש" | "מצב טוב" | "משומש" | "דרוש תיקון";
 
@@ -6,8 +6,8 @@ export type DbItem = {
   _id?: string;
   productName: string;
   description: string;
-  category: Category;
-  status: StatusType;
+  category: string;
+  status: string;
   price: number;
   img: string;
   name: string;

@@ -4,7 +4,7 @@ import Card from "../card/Card";
 import { DbItem } from "../../@types";
 
 const SpecificCategory = () => {
-  const url = "http://localhost:8080/api/products";
+  const url = "http://localhost:8080/api/products/allProducts";
   const [products, setProducts] = useState<DbItem[]>([]);
 
   useEffect(() => {

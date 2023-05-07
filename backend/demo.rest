@@ -2,9 +2,17 @@
 GET http://localhost:8080/
 
 ### POST
-POST http://localhost:8080/
+POST http://localhost:8080/api/products/addProduct
 Content-Type: application/json
 
 {
-    "try": "delete"
+    "productName": "2כיסא תינוק לרכב",
+    "description": "קשירה נוחה",
+    "category": "לתינוק ולילד",
+    "status": "מצב טוב",
+    "price": 150,
+    "name": "רמי",
+    "city": "תל אביב",
+    "number": "0522554895",
+    "isFave": false
 }

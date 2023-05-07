@@ -2,6 +2,7 @@ import { DbItem } from '../../@types'
 import css from './Card.module.scss'
 import { HiOutlineHeart, HiHeart } from 'react-icons/hi';
 
+// const Card = ({ productName, price,  city }:DbItem) => {
 const Card = ({ productName, price, img, city }:DbItem) => {
   return (
     <div className={css.card}>
