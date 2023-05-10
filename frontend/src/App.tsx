@@ -4,17 +4,19 @@ import "./App.css";
 import Categories from "./components/categories/Categories";
 import SpecificCategory from "./components/specificCategory/SpecificCategory";
 import AddCard from "./components/add-card/AddCard";
-import LoginForm from "./components/login-form/LoginForm";
+// import LoginForm from "./components/login-form/LoginForm";
+import FormExample from "./components/add-card/FormExample";
 
 function App() {
   return (
     <div className="App">
-      <LoginForm/>
+      {/* <LoginForm/> */}
       <Routes>
         <Route path="/" element={<Categories />} />
         <Route path="/home" element={<Categories />} />
         <Route path="/home/:endpoint" element={<SpecificCategory />} />
-        <Route path="/add" element={<AddCard />} />
+        <Route path="/add" element={<FormExample />} />
+        <Route path="/add2" element={<AddCard />} />
       </Routes>
     </div>
   );

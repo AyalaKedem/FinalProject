@@ -1,14 +1,16 @@
 import { Product } from "../db/models/prodactM.js";
-const addProduct = ({ body, file }, res) => {
-    const { productName, description, category, status, price, name, city, number, isFave } = body;
-    // const img = file.filename;
+import multer from "multer";
+// import MongoClient from 'mongodb';
+const upload = multer();
+const addProduct = ({ body }, res) => {
+    const { productName, description, category, status, price, img, name, city, number, isFave } = body;
     const product = new Product({
         productName,
         description,
         category,
         status,
         price,
-        // img,
+        img,
         name,
         city,
         number,
@@ -30,4 +32,4 @@ const allProducts = (req, res) => {
         res.status(500).json({ message: `Error: ${e}` });
     });
 };
-export { addProduct, allProducts };
+export { addProduct, allProducts, upload };

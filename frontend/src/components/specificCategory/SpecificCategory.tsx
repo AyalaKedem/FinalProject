@@ -14,7 +14,9 @@ const SpecificCategory = () => {
   },[url]);
 
   const title = useAppSelector((state) => state.category.category);
+  console.log('title' + title);
   const arr = products.filter((a) => a.category === title);
+  console.log(arr);
 
   return (
     <div className="d-flex flex-wrap justify-content-center gap-4">
