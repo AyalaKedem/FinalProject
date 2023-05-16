@@ -6,7 +6,7 @@ import { ImMobile } from "react-icons/im";
 import { BiBorderAll } from "react-icons/bi";
 import { AiFillDollarCircle } from "react-icons/ai";
 import { CiBaseball } from "react-icons/ci";
-import { CategoryProp, StatusType } from "../@types";
+import { CategoryProp, /*StatusType*/ } from "../@types";
 
 export const CategoryArr: CategoryProp[] = [
   {
@@ -85,5 +85,6 @@ export const CategoryArr: CategoryProp[] = [
     endpoint: "free",
   },
 ];
+export const categoryArr = ["רכב", 'נדל"ן', "מטבח", "רהיטים", "ביגוד והנעלה", "אוספים", "חיות מחמד", "ספרים", "מוצרי חשמל", "ספורט", "סלולר", "מחשבים", "לתינוק ולילד", "שונות"];
 
-export const Status: StatusType[] = ["חדש", "כמו חדש", "מצב טוב", "משומש", "דרוש תיקון"];
+export const Status/*: StatusType[]*/ = ["חדש", "כמו חדש", "מצב טוב", "משומש", "דרוש תיקון"];

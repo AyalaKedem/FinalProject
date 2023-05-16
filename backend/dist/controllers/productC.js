@@ -1,6 +1,5 @@
 import { Product } from "../db/models/prodactM.js";
 import multer from "multer";
-// import MongoClient from 'mongodb';
 const upload = multer();
 const addProduct = ({ body }, res) => {
     const { productName, description, category, status, price, img, name, city, number, isFave } = body;

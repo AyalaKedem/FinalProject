@@ -1,5 +1,3 @@
-// type Category = "רכב" | 'נדל"ן' | "מטבח" | "רהיטים" | "ביגוד והנעלה" | "אוספים" | "חיות מחמד" | "ספרים" | "מוצרי חשמל" | "ספורט" | "סלולר" | "מחשבים" | "לתינוק ולילד" | "שונות";
-
 export type StatusType = "חדש" | "כמו חדש" | "מצב טוב" | "משומש" | "דרוש תיקון";
 
 export type DbItem = {
@@ -29,3 +27,14 @@ export type initialStateCategory = {
 // export type InitialStateDb = {
 //   db: DbItem[];
 // }
+
+type CustomInputProps = {
+  className: string;
+  validate: any;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  type: "text";
+};
+
+type ExtendedInputProps = CustomInputProps & InputHTMLAttributes<HTMLInputElement>;
+
