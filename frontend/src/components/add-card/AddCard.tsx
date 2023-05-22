@@ -3,6 +3,7 @@ import { CategoryArr, Status, categoryArr } from "../../services/Arrays";
 import { DbItem } from "../../@types";
 import css from "./AddCard.module.scss";
 import validator from "validator";
+import { phoneRegex } from "../../services/regex";
 
 const AddCard = () => {
   const grayBackGround = "https://images.pexels.com/photos/62693/pexels-photo-62693.jpeg?auto=compress&cs=tinysrgb&w=1600";
@@ -79,7 +80,7 @@ const AddCard = () => {
     } else {
       setDescriptionError("");
     }
-  }
+  };
 
   const nameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.currentTarget.value);
@@ -100,8 +101,9 @@ const AddCard = () => {
   };
 
   const numberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNumber(e.currentTarget.value);
-    if (!validator.isLength(e.currentTarget.value, { min: 9 })) {
+    const value = e.currentTarget.value;
+    setNumber(value);
+    if (!validator.isLength(value, { min: 9 }) || !value.match(phoneRegex)) {
       setNumberError("מספר לא תקין");
     } else {
       setNumberError("");
@@ -188,23 +190,29 @@ const AddCard = () => {
 
         <h4>פרטי המוכר:</h4>
         <div className="d-sm-flex gap-3 justify-content-between mt-2 mb-5">
-          <div className="d-flex">
-            <label className="ps-1">שם:</label>
-            <input value={name} onChange={nameChange} type="text" />
+          <div>
+            <div className="d-flex">
+              <label className="ps-1">שם:</label>
+              <input value={name} onChange={nameChange} type="text" />
+            </div>
+            {nameError && <div className="text-start">* {nameError}</div>}
           </div>
-          {nameError && <div>* {nameError}</div>}
 
-          <div className="d-flex">
-            <label className="ps-1">עיר:</label>
-            <input value={city} onChange={cityChange} type="text" />
+          <div>
+            <div className="d-flex">
+              <label className="ps-1">עיר:</label>
+              <input value={city} onChange={cityChange} type="text" />
+            </div>
+            {cityError && <div className="text-start">* {cityError}</div>}
           </div>
-          {cityError && <div>* {cityError}</div>}
 
-          <div className="d-flex">
-            <label className="ps-1">נייד:</label>
-            <input value={number} onChange={numberChange} type="text" />
+          <div>
+            <div className="d-flex">
+              <label className="ps-1">נייד:</label>
+              <input value={number} onChange={numberChange} type="text" />
+            </div>
+            {numberError && <div className="text-start">* {numberError}</div>}
           </div>
-          {numberError && <div>* {numberError}</div>}
         </div>
         <input type="button" value="Save" onClick={handleSubmit} />
         {/* <input type="submit" value="Save" /> */}
